@@ -1,0 +1,86 @@
+/* 1. Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margins */
+* {
+    margin: 0;
+}
+
+/* 3. Core body defaults */
+body {
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 4. Remove list styles */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 5. Anchor defaults */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 7. Form elements inherit fonts */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 8. Remove button defaults */
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* 9. Headings behave consistently */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+/* 10. Tables */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 11. Root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* 12. Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+pre {
+    white-space: pre-wrap;
+}

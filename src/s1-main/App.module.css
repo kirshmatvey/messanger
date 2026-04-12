@@ -3,9 +3,14 @@
 }
 
 .hw {
-
+    padding: 25px 70px 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 55px
 }
 
 .hwTitle {
-
+    margin: 130px 0 10px 70px;
+    font-weight: 600;
+    font-size: 22px;
 }
