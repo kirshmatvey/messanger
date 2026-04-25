@@ -14,6 +14,8 @@
 }
 
 .errorInput {
+    border: 1px solid #cc0000;
+    outline: 2px solid #cc0000;
 }
 
 .button {
