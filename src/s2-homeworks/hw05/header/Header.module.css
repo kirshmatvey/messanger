@@ -2,7 +2,18 @@
 }
 
 .header {
+    width: 100%;
+    position: sticky;
+    padding: 20px 70px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 2px 0 rgba(29, 33, 38, 0.1), 0 0 40px 0 rgba(29, 33, 38, 0.13);
+    top: 0;
+    background-color: #fff;
+    z-index: 99;
 }
 
 .header h1 {
+    font-weight: 600;
+    font-size: 24px;
 }
