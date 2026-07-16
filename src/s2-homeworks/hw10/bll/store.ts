@@ -9,6 +9,9 @@ const reducers = combineReducers({
 
 const store = legacy_createStore(reducers)
 
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch
+
 export default store
 
 export type AppStoreType = ReturnType<typeof reducers>
