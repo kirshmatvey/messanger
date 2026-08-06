@@ -22,10 +22,10 @@ const themes = [
 const HW12 = () => {
     // взять ид темы из редакса
     const dispatch = useDispatch<AppDispatch>()
-    const themeId = useSelector((state: RootState) => state.theme)
+    const themeId = useSelector((state: RootState) => state.theme.themeId)
 
     const change = (id: number) => {
-        debugger // дописать функцию
+        console.log(typeof id)
         dispatch(changeThemeId(id))
     }
 
