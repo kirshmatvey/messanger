@@ -7,10 +7,10 @@ import {useSearchParams} from 'react-router-dom'
 import SuperSort from './common/c10-SuperSort/SuperSort'
 
 /*
-* 1 - дописать SuperPagination
-* 2 - дописать SuperSort
-* 3 - проверить pureChange тестами
-* 3 - дописать sendQuery, onChangePagination, onChangeSort в HW15
+* 1 - дописать SuperPagination +
+* 2 - дописать SuperSort +
+* 3 - проверить pureChange тестами +
+* 3 - дописать sendQuery, onChangePagination, onChangeSort в HW15 +
 * 4 - сделать стили в соответствии с дизайном
 * 5 - добавить HW15 в HW5/pages/JuniorPlus
 * */
@@ -33,9 +33,6 @@ const getTechs = (params: ParamsType) => {
             'https://samurai.it-incubator.io/api/3.0/homework/test3',
             {params}
         )
-        .catch((e) => {
-            alert(e.response?.data?.errorText || e.message)
-        })
 }
 
 const HW15 = () => {
@@ -52,21 +49,29 @@ const HW15 = () => {
         getTechs(params)
             .then((res) => {
                 // делает студент
-
+                setTechs(res.data.techs)
+                setTotalCount(res.data.totalCount)
                 // сохранить пришедшие данные
 
                 //
+            }).catch((e) => {
+                alert(e.response?.data?.errorText || e.message)
             })
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
 
-        // setPage(
-        // setCount(
+        setPage(newPage)
+        setCount(newCount)
 
-        // sendQuery(
-        // setSearchParams(
+        sendQuery({sort, page: newPage, count: newCount})
+        setSearchParams((searchParams) => {
+            searchParams.set('sort', sort)
+            searchParams.set('page', `${newPage}`)
+            searchParams.set('count', `${newCount}`)
+            return searchParams
+        })
 
         //
     }
@@ -74,13 +79,16 @@ const HW15 = () => {
     const onChangeSort = (newSort: string) => {
         // делает студент
 
-        // setSort(
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
+        setSort(newSort)
+        setPage(1) // при сортировке сбрасывать на 1 страницу
 
-        // sendQuery(
-        // setSearchParams(
-
-        //
+        sendQuery({sort: newSort, page: 1, count})
+        setSearchParams((searchParams) => {
+            searchParams.set('sort', newSort)
+            searchParams.set('page', `${1}`)
+            searchParams.set('count', `${count}`)
+            return searchParams
+        })
     }
 
     useEffect(() => {
